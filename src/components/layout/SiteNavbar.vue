@@ -70,7 +70,6 @@ const closeMenu = () => {
 }
 
 const handleScroll = () => {
-  // Cambia el estado si bajamos más de 50px
   isScrolled.value = window.scrollY > 50
 }
 
@@ -83,10 +82,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 
 /* === CONFIGURACIÓN DE COLORES === */
 .header, .top-bar, .mobile-menu-overlay {
-  --primary: #0EA5E9;       /* Celeste Principal (Sky 500) */
-  --primary-gradient: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%); /* Degradado Celeste a Azul */
-  --primary-dark: #0284C7;  /* Azul más oscuro para hover y topbar */
-  --deep-blue: #0c4a6e;     /* Azul muy oscuro para la TopBar */
+  --primary: #0EA5E9;
+  --primary-gradient: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
+  --primary-dark: #0284C7;
+  --deep-blue: #0c4a6e;
   
   --text-white: #FFFFFF;
   --text-dark: #1E293B;
@@ -94,9 +93,9 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* === TOP BAR (Utilitaria) === */
+
 .top-bar {
-  background-color: var(--deep-blue); /* Fondo oscuro fijo */
+  background-color: var(--deep-blue);
   color: rgba(255, 255, 255, 0.9);
   font-size: 12px;
   padding: 8px 0;
@@ -127,11 +126,9 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
-  
-  /* AQUÍ ESTÁ LA SOLUCIÓN: Fondo Celeste Sólido (con degradado) por defecto */
   background: var(--primary-gradient); 
   color: var(--text-white);
-  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.2); /* Sombra azul suave */
+  box-shadow: 0 4px 15px rgba(2, 132, 199, 0.2);
 }
 
 .container {
@@ -160,8 +157,8 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 .logo-icon {
   width: 38px;
   height: 38px;
-  background: white; /* Fondo blanco para el icono */
-  color: var(--primary-dark); /* Icono azul */
+  background: white;
+  color: var(--primary-dark); 
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -187,7 +184,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   font-size: 15px;
   font-weight: 600;
   text-decoration: none;
-  color: rgba(255,255,255,0.95); /* Blanco muy visible */
+  color: rgba(255,255,255,0.95);
   position: relative;
   transition: color 0.3s ease;
   padding: 5px 0;
@@ -238,7 +235,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
   display: block;
   width: 100%;
   height: 2px;
-  background: white; /* Siempre blanco por defecto */
+  background: white;
   border-radius: 4px;
   transition: all 0.3s ease;
 }
@@ -252,7 +249,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 .mobile-menu-overlay {
   position: fixed;
   inset: 0;
-  background: var(--primary-gradient); /* Fondo Celeste en Móvil también */
+  background: var(--primary-gradient);
   padding-top: 100px;
   display: flex;
   justify-content: center;
@@ -282,23 +279,23 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 
 .brand-stack {
   display: flex;
-  flex-direction: column; /* Una palabra arriba de la otra */
-  line-height: 0.9; /* Bien pegaditas verticalmente */
+  flex-direction: column;
+  line-height: 0.9;
   align-items: flex-start;
 }
 
 .word-small {
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.3em; /* Espaciado muy amplio estilo premium */
+  letter-spacing: 0.3em;
   opacity: 0.9;
   font-weight: 500;
-  margin-left: 2px; /* Pequeño ajuste óptico */
+  margin-left: 2px;
 }
 
 .word-big {
   font-size: 24px;
-  font-weight: 900; /* Black / Extra Bold */
+  font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.02em;
 }

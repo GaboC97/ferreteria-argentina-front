@@ -166,25 +166,19 @@ let intervalId = null
 const next = () => activeIndex.value = (activeIndex.value + 1) % slides.length
 
 onMounted(() => {
-  // 1. Iniciar el Intervalo del Slider (Tu código original)
   intervalId = setInterval(next, 6000)
-
-  // 2. Iniciar el Observador de Scroll (Nuevo)
   const observerOptions = {
-    threshold: 0.1, // Se activa cuando se ve el 10% del elemento
-    rootMargin: "0px 0px -50px 0px" // Un pequeño margen para que no aparezca muy abajo
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px" 
   }
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('is-visible')
-        observer.unobserve(entry.target) // Deja de observar una vez animado
+        observer.unobserve(entry.target) 
       }
     })
   }, observerOptions)
-
-  // Seleccionamos todos los elementos con la clase .animate-on-scroll
   const elements = document.querySelectorAll('.animate-on-scroll')
   elements.forEach((el) => observer.observe(el))
 })
@@ -196,7 +190,7 @@ const brands = [
   stihlImg, boschImg, libusImg, albaImg, sikaImg,
   totalImg, makitaImg, detwaltImg, stanleyImg
 ]
-// Duplicamos x4 para asegurar scroll infinito fluido
+
 const brandsLoop = computed(() => [...brands, ...brands, ...brands, ...brands])
 
 // --- CATEGORIAS ---
@@ -572,21 +566,15 @@ const categories = [
   padding-top: 0;
   padding-bottom: 80px;
   background: var(--light);
-  /* Se funde con el resto de la web */
 }
 
 .brands-label {
   text-align: center;
   font-size: 13px;
   font-weight: 800;
-  /* Extra bold */
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  /* Más espaciado para elegancia */
-
-  /* Usamos el azul de tu marca en lugar de gris */
   color: var(--primary);
-
   margin-bottom: 48px;
   opacity: 1;
 }
@@ -618,7 +606,6 @@ const categories = [
   gap: 80px;
   width: max-content;
   animation: scroll 40s linear infinite;
-  /* Asegura que el track esté alineado verticalmente */
   align-items: center;
 }
 
@@ -637,28 +624,22 @@ const categories = [
   height: 45px;
   width: auto;
   object-fit: contain;
-  /* El mix-blend-mode está bien, pero a veces causa conflictos visuales en hover */
   mix-blend-mode: multiply; 
 
   transition: all 0.3s ease;
 }
 
-/* Efecto Hover: Corrección */
+
 .brand-item:hover {
   opacity: 1;
-  transform: scale(1.15); /* Un poco más de escala para notar el efecto */
-  
-  /* SOLUCIÓN AL BUG VISUAL: */
-  z-index: 10; /* Trae el elemento al frente absoluto */
+  transform: scale(1.15);
+  z-index: 10;
 }
 
 .brand-item:hover .brand-img {
-  filter: grayscale(0%) opacity(1); /* Vuelve al color original */
-  /* Opcional: quitar el blend mode al hover para que destaque nítidamente */
+  filter: grayscale(0%) opacity(1);
   mix-blend-mode: normal; 
 }
-
-/* Eliminamos las clases .fade-edge ya que usamos mask-image */
 
 @keyframes scroll {
   0% {
@@ -675,14 +656,12 @@ const categories = [
   .marquee-track {
     gap: 40px;
     animation-duration: 25s;
-    /* Un poco más rápido en móvil */
   }
 
   .brand-img {
     height: 35px;
   }
 
-  /* Ajuste de mascara para pantallas pequeñas (menos borde difuminado para aprovechar espacio) */
   .marquee-wrapper {
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
     mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
@@ -700,33 +679,24 @@ const categories = [
 }
 
 @media (max-width: 768px) {
-  /* 1. Configuración de la Grilla Móvil */
   .visual-grid {
-    /* Forzamos 2 columnas del mismo ancho exacto */
     grid-template-columns: repeat(2, 1fr);
-    
-    /* DEFINIMOS LA ALTURA FIJA PARA TODAS LAS TARJETAS */
-    /* Esto es lo que arregla que unas se vean cortas y otras largas */
     grid-auto-rows: 200px; 
-    
-    gap: 12px; /* Un poco menos de espacio en móvil */
+    gap: 12px;
   }
 
-  /* 2. Resetear el comportamiento de las tarjetas */
   .grid-item,
   .grid-item.span-2, 
   .grid-item.normal {
-    /* Forzamos que TODAS ocupen solo 1 columna */
     grid-column: span 1 !important; 
   }
 
-  /* 3. Ajustes visuales para que el texto entre bien en tarjetas más chicas */
   .item-content {
-    padding: 16px; /* Menos padding interno */
+    padding: 16px; 
   }
 
   .item-bottom h3 {
-    font-size: 18px; /* Texto un poco más chico */
+    font-size: 18px; 
     margin-bottom: 4px;
   }
   
@@ -734,8 +704,7 @@ const categories = [
       font-size: 11px;
       padding: 4px 8px;
   }
-  
-  /* Opcional: Ocultar el botón "Explorar" en móvil para limpiar la vista */
+
   .hover-reveal {
       display: none;
   }
@@ -747,7 +716,6 @@ const categories = [
   color: white;
   padding: 32px 0;
   margin-top: -2px;
-  /* Para pegar con el hero si hace falta */
   position: relative;
   z-index: 20;
 }
@@ -794,53 +762,39 @@ const categories = [
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  /* Alineamos al centro para que si crecen no se muevan verticalmente */
   align-items: center; 
-  gap: 16px; /* Un poco más de espacio entre ellos queda mejor */
+  gap: 16px;
   z-index: 20;
-  padding: 10px; /* Área de click un poco más grande */
+  padding: 10px;
 }
 
 .dot {
-  /* 1. Reseteo imperativo del botón nativo del navegador */
-  appearance: none; /* Importante para Safari/iOS */
+  appearance: none; 
   padding: 0;
   margin: 0;
   outline: none;
   cursor: pointer;
-
-  /* 2. Estilo base (Inactivo): Fondo blanco, borde celeste */
   width: 12px;
   height: 12px;
-  border-radius: 50%; /* Círculo perfecto */
-  
-  background-color: #ffffff; /* Fondo BLANCO */
-  border: 2px solid #0EA5E9; /* Borde CELESTE (ajusta el grosor si quieres) */
+  border-radius: 50%; 
 
-  /* 3. Transiciones y detalles */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Animación "punchy" */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Pequeña sombra para separarlo de la imagen de fondo */
+  background-color: #ffffff;
+  border: 2px solid #0EA5E9;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Estado Hover (cuando pasas el mouse por encima) */
 .dot:hover {
   transform: scale(1.15);
-  box-shadow: 0 4px 8px rgba(14, 165, 233, 0.4); /* Resplandor celeste */
-  border-color: #0284C7; /* Un celeste un poco más oscuro al hover */
+  box-shadow: 0 4px 8px rgba(14, 165, 233, 0.4);
+  border-color: #0284C7;
 }
 
 /* Estado Activo (el slide actual) */
 .dot.active {
-  /* Opción A: Invertir colores (Más claro visualmente) */
-  background-color: #0EA5E9; /* Fondo CELESTE sólido */
+  background-color: #0EA5E9;
   border-color: #0EA5E9;
-  transform: scale(1.3); /* Un 30% más grande */
-  
-  /* Opción B: Si prefieres que el activo TAMBIÉN sea blanco con borde celeste, descomenta esto y borra lo de arriba: */
-  /* background-color: #ffffff;
-  border-width: 3px; 
-  transform: scale(1.4);
-  */
+  transform: scale(1.3);
 }
 
 /* === SCROLL ANIMATIONS === */
@@ -855,7 +809,6 @@ const categories = [
 .animate-on-scroll.is-visible {
   opacity: 1;
   transform: translateY(0);
-  /* Sube a su posición original */
 }
 
 /* Retrasos escalonados para grupos de elementos */

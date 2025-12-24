@@ -79,7 +79,7 @@ const waLink = computed(() => `https://wa.me/${phone}?text=${encodeURIComponent(
 /* Tooltip (Texto a la izquierda) */
 .wa-tooltip {
   position: absolute;
-  right: 70px; /* A la izquierda del botón */
+  right: 70px;
   background: white;
   color: #1e293b;
   padding: 8px 16px;

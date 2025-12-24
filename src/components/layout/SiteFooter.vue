@@ -54,13 +54,13 @@
               <div class="icon-circle">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               </div>
-              <span class="contact-text">+54 9 280 472-8518</span>
+              <span class="contact-text">+54 9 280 499-9999</span>
             </li>
             <li>
               <div class="icon-circle">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               </div>
-              <a href="mailto:ventas@ferreteriaarg.com.ar" class="contact-text link-u">ferrear.rw@ferrear.com.ar</a>
+              <a href="mailto:ventas@ferreteriaarg.com.ar" class="contact-text link-u">test@test.com</a>
             </li>
             <li>
               <div class="icon-circle">
@@ -128,8 +128,6 @@ onMounted(() => {
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 .footer {
-  /* === PALETA CELESTE PREMIUM === */
-  /* Mismo gradiente que la Navbar para consistencia total */
   --bg-gradient: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
   --text-white: #FFFFFF;
   --text-dim: rgba(255, 255, 255, 0.85);
@@ -143,7 +141,7 @@ onMounted(() => {
   position: relative;
   overflow: hidden;
   opacity: 0;
-  transition: opacity 0.8s ease-out; /* Solo opacidad, sin movimiento */
+  transition: opacity 0.8s ease-out;
 }
 
 .footer.is-visible {
@@ -155,7 +153,6 @@ onMounted(() => {
   padding: 0 24px;
 }
 
-/* Patrón de fondo sutil (opcional, da textura) */
 .footer-bg-pattern {
   position: absolute;
   top: 0;
@@ -199,7 +196,7 @@ onMounted(() => {
   width: 48px;
   height: 48px;
   background: white;
-  color: #0284C7; /* Azul oscuro para contraste */
+  color: #0284C7;
   font-weight: 800;
   font-size: 20px;
   display: flex;
@@ -328,7 +325,7 @@ onMounted(() => {
   font-size: 15px;
   color: var(--text-dim);
   line-height: 1.5;
-  margin-top: 4px; /* Alinear visualmente con icono */
+  margin-top: 4px;
 }
 
 .link-u {
@@ -389,7 +386,7 @@ onMounted(() => {
 
 /* === BOTTOM BAR === */
 .bottom-bar {
-  background: rgba(0, 20, 40, 0.15); /* Ligeramente más oscuro para separar */
+  background: rgba(0, 20, 40, 0.15);
   backdrop-filter: blur(5px);
   padding: 20px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);

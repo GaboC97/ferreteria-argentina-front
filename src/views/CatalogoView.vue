@@ -261,7 +261,6 @@ const selectedProduct = ref(null)
 const isInitialLoad = ref(true)
 const showToast = ref(false)
 
-// MODIFICADO: Eliminado brandsRailRef ya no es necesario
 
 // --- COMPUTED ---
 const availableBrandsList = computed(() => {
@@ -297,7 +296,7 @@ onMounted(() => {
 })
 
 // --- METHODS ---
-// MODIFICADO: Eliminada la función onRailWheel (el scroll es CSS ahora)
+
 
 const toggleBrand = (brand) => {
   selectedBrand.value = (selectedBrand.value === brand) ? 'Todas' : brand
@@ -411,7 +410,7 @@ const closeModal = () => {
   color: #94A3B8;
 }
 
-/* === FILTROS ESTILO APP === */
+/* === FILTROS === */
 .filters-container {
   background: white;
   padding: 20px 0;
@@ -531,13 +530,13 @@ const closeModal = () => {
 }
 
 
-/* === RAIL DE MARCAS (MODIFICADO: Mobile Scroll / Desktop Wrap) === */
+/* === RAIL DE MARCAS  === */
 .brands-rail-container {
   position: relative;
   width: 100%;
 }
 
-/* Sombra degradada: Visible SOLO en Mobile (por defecto) */
+/* Sombra degradada: Visible SOLO en Mobile */
 .brands-rail-container::after {
   content: '';
   position: absolute;
@@ -579,8 +578,8 @@ const closeModal = () => {
   .brands-rail {
     flex-wrap: wrap;
     overflow-x: visible;
-    justify-content: center; /* Centrado estético */
-    padding: 4px 24px 20px 24px; /* Un poco más de aire abajo */
+    justify-content: center;
+    padding: 4px 24px 20px 24px; 
   }
 }
 
@@ -631,7 +630,7 @@ const closeModal = () => {
   color: white;
 }
 
-/* Animación simple */
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s;

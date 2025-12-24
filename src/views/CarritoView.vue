@@ -102,7 +102,6 @@
 </template>
 
 <script setup>
-// ... (Tu script queda exactamente igual, no hace falta tocarlo)
 import { computed } from 'vue'
 import { store } from '../store/store.js'
 
@@ -131,7 +130,6 @@ const whatsappCheckoutLink = computed(() => {
 </script>
 
 <style scoped>
-/* ... (Mantén tus estilos base de fuentes y layout) ... */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 .cart-page {
@@ -142,7 +140,7 @@ const whatsappCheckoutLink = computed(() => {
     flex-direction: column;
 }
 
-/* ... Copia aquí el resto de tus estilos estructurales (container, cart-header, etc.) ... */
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -199,7 +197,7 @@ const whatsappCheckoutLink = computed(() => {
     gap: 24px;
 }
 
-/* ESTILOS DEL ITEM (Sin cambios estructurales, solo visuales) */
+
 .cart-item {
     background: white;
     padding: 24px;
@@ -210,7 +208,7 @@ const whatsappCheckoutLink = computed(() => {
     gap: 24px;
     align-items: center;
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-    /* Solo hover */
+
 }
 
 .cart-item:hover {
@@ -219,7 +217,7 @@ const whatsappCheckoutLink = computed(() => {
     transform: translateY(-2px);
 }
 
-/* ... (Resto de estilos de botones, imagen, etc. igual que antes) ... */
+
 .item-img {
     width: 100px;
     height: 100px;
@@ -480,28 +478,19 @@ const whatsappCheckoutLink = computed(() => {
     }
 }
 
-/* =========================================
-   NUEVAS ANIMACIONES MANUALES (KEYFRAMES)
-   ========================================= */
 
-/* 1. Header que baja suave */
 .animate-fade-down {
     animation: fadeDown 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
-/* 2. Items del carrito (Cascada) */
 .stagger-anim {
-    /* "both" mantiene el estado inicial (opacity 0) hasta que corre la animación */
     animation: fadeInUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
-/* 3. Resumen (Sube un poco más tarde) */
 .animate-fade-up-delayed {
     animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.3s both;
 }
 
-/* 4. Empty State (El que te daba problemas) */
-/* Ahora tiene su propia animación "Pop" que se activa apenas aparece */
 .animate-pop-in {
     animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }

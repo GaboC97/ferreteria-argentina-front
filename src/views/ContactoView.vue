@@ -22,7 +22,7 @@
               </div>
               <div class="item-text">
                 <span class="label">Teléfono</span>
-                <a href="tel:02804481442" class="value-link">0280 4481-442</a>
+                <a href="tel:02804999999" class="value-link">0280 4999-999</a>
               </div>
             </div>
 
@@ -32,7 +32,7 @@
               </div>
               <div class="item-text">
                 <span class="label">Email Ventas</span>
-                <a href="mailto:ferrear.rw@ferrear.com.ar" class="value-link">ferrear.rw@ferrear.com.ar</a>
+                <a href="mailto:test@test.com" class="value-link">test@test.com</a>
               </div>
             </div>
 
@@ -42,7 +42,7 @@
               </div>
               <div class="item-text">
                 <span class="label">WhatsApp</span>
-                <a href="https://wa.me/5492804728518" target="_blank" class="value-link">+54 9 280 472-8518</a>
+                <a href="https://wa.me/02804999999" target="_blank" class="value-link">+54 9 280 499-9999</a>
               </div>
             </div>
           </div>
@@ -168,7 +168,6 @@ onMounted(() => {
     })
   }, observerOptions)
 
-  // Seleccionamos todos los elementos a animar
   const elements = document.querySelectorAll('.animate-on-scroll')
   elements.forEach((el) => observer.observe(el))
 })
@@ -178,11 +177,9 @@ const successMessage = ref(false)
 
 const submitForm = () => {
   isSubmitting.value = true
-  // Simulación de envío a API
   setTimeout(() => {
     isSubmitting.value = false
     successMessage.value = true
-    // Reset form
     form.name = ''
     form.phone = ''
     form.email = ''
@@ -193,7 +190,7 @@ const submitForm = () => {
 }
 
 // --- FAQ LOGIC ---
-const openFaq = ref(0) // El primero abierto por defecto
+const openFaq = ref(0)
 const faqs = [
   {
     question: "¿Hacen envíos a domicilio?",
@@ -249,7 +246,7 @@ const toggleFaq = (index) => {
 /* === GRID LAYOUT === */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr; /* Info (izq) más angosta, Form (der) más ancho */
+  grid-template-columns: 1fr 1.5fr; 
   gap: 48px;
   margin-bottom: 80px;
 }
@@ -304,7 +301,7 @@ const toggleFaq = (index) => {
   font-size: 11px; font-weight: 700; text-transform: uppercase;
   padding: 4px 10px; border-radius: 6px; margin-bottom: 6px;
 }
-.loc-badge.playa { background: #D97706; } /* Amarillo para Playa */
+.loc-badge.playa { background: #D97706; }
 .location-item p { font-size: 15px; font-weight: 500; color: #475569; }
 
 
@@ -398,7 +395,6 @@ input:focus, select:focus, textarea:focus {
   transform: translateY(0);
 }
 
-/* Delays para efecto cascada */
 .delay-100 { transition-delay: 0.1s; }
 .delay-200 { transition-delay: 0.2s; }
 .delay-300 { transition-delay: 0.3s; }

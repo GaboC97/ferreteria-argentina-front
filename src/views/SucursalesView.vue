@@ -174,7 +174,6 @@ const getMapUrl = (coords) => {
 }
 
 .container {
-  /* CAMBIO 1: Aumentamos el ancho máximo para que entren las 3 cómodas */
   max-width: 1360px; 
   margin: 0 auto;
   padding: 0 24px;
@@ -227,12 +226,10 @@ const getMapUrl = (coords) => {
   box-shadow: 0 5px 15px rgba(14, 165, 233, 0.15);
 }
 
-/* === GRID LAYOUT (FIX PARA 3 COLUMNAS) === */
 .branches-wrapper {
   display: grid;
-  /* CAMBIO 2: Forzamos 3 columnas de igual tamaño */
   grid-template-columns: repeat(3, 1fr); 
-  gap: 24px; /* Reducimos un poco el gap para que no se aprieten */
+  gap: 24px;
   align-items: start;
 }
 
@@ -271,7 +268,7 @@ iframe {
 }
 
 .card-content {
-  padding: 24px; /* Un poco menos de padding para ganar espacio */
+  padding: 24px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -292,7 +289,7 @@ iframe {
 .branch-badge.orange { background: #FEF3C7; color: #D97706; }
 
 .branch-name {
-  font-size: 20px; /* Ajustamos ligeramente el tamaño de fuente */
+  font-size: 20px;
   font-weight: 800;
   color: #0F172A;
   line-height: 1.2;
@@ -331,7 +328,7 @@ iframe {
   flex: 1; padding: 10px; border-radius: 8px;
   font-weight: 600; text-decoration: none;
   text-align: center; font-size: 13px; transition: all 0.2s;
-  white-space: nowrap; /* Evita que el texto se rompa */
+  white-space: nowrap;
 }
 
 .btn-primary { background: #0F172A; color: white; }
@@ -424,7 +421,6 @@ iframe {
 /* === RESPONSIVE === */
 
 /* Tablets (Entre 768px y 1100px) */
-/* Aquí hacemos que pasen a 2 columnas si la pantalla no es tan ancha */
 @media (max-width: 1100px) {
   .branches-wrapper {
     grid-template-columns: repeat(2, 1fr);
@@ -434,7 +430,7 @@ iframe {
 /* Celulares (Menos de 768px) */
 @media (max-width: 768px) {
   .branches-wrapper {
-    grid-template-columns: 1fr; /* 1 sola columna en móvil */
+    grid-template-columns: 1fr;
   }
   
   .title { font-size: 32px; }

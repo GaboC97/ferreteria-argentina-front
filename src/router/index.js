@@ -16,15 +16,12 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes, // <--- No te olvides de esta coma
+  routes,
 
-  // AGREGAR ESTO AQUÍ:
   scrollBehavior(to, from, savedPosition) {
-    // Si existe una posición guardada (botón atrás), vuelve ahí
     if (savedPosition) {
       return savedPosition
     }
-    // Si no, sube arriba de todo
     return { top: 0 }
   }
 })
